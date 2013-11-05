@@ -1,0 +1,11 @@
+@(loginForm: Form[com.github.playguard.controllers.SessionAuthentication.Login])
+
+<form method="post" action="/sec/login">
+    @helper.inputText(loginForm("username"))
+    @helper.inputPassword(loginForm("password"))
+        <input type="hidden" name="returnUrl" value="@loginForm.data.get("returnUrl")" />
+    <div>
+        <input type="submit" value="Login">
+    </div>
+
+</form>

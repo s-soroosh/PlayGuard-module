@@ -1,0 +1,9 @@
+# Routes
+# This file defines all application playguard.routes (Higher priority playguard.routes first)
+# ~~~~
+
+# Home page
+GET        /login               com.github.playguard.controllers.SessionAuthentication.showPage
+POST       /login               com.github.playguard.controllers.SessionAuthentication.login
+
+
