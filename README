@@ -1,6 +1,4 @@
-This is your new Play application
+Don't play with play! without PlayGuard!
 =====================================
 
-This file will be packaged with your application, when using `play dist`.
-
-This file was modified by IntelliJ IDEA 12.1.6 for binding GitHub repository
+PlayGuard is a simple Security Framework for Play webapplications (currently just for scala).
