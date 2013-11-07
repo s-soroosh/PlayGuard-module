@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: com.typesafe.netty:netty-http-pipelining:1.1.2">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/play/play/repository/local/com.typesafe.netty/netty-http-pipelining/1.1.2/jars/netty-http-pipelining.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: org.webbitserver:webbit:0.4.14:test">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/play/play/repository/local/org.webbitserver/webbit/0.4.14/jars/webbit.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
