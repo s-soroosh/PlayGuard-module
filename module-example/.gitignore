@@ -5,7 +5,6 @@ target
 tmp
 .history
 dist
-.idea
 /.idea
 /*.iml
 /out
@@ -14,6 +13,3 @@ dist
 /.project
 /RUNNING_PID
 /.settings
-/module-core/.idea
-/module-core/*.iml
-/module-core/.idea_modules
