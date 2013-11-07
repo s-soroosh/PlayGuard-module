@@ -2,3 +2,48 @@ Don't play with play! without PlayGuard!
 =====================================
 
 PlayGuard is a simple Security Framework for Play webapplications (currently just for scala).
+
+I would like to have an active and kind community for working on this project. There are many contribution points which you can improve.
+
+With using PlayGuard you can secure your actions with using com.github.playguard.action.SessionSecureAction instead of
+play.api.mvc.Action.
+
+After using SessionSecureAction if the user is not authenticated yet, she will redirect to login page (currently a very simple page)
+When she authenticated successfully then the user will redirect to the secured action.
+
+There is a  PrincipalRepository interface which you can implement your own principal repostiry and set it in SecurityRegistry object.
+Current there are two implementation
+
+com.github.playguard.repository.DefaultPrincipalRepositry:
+A very simple Repostiry with static user and password. It is suitable just for testing your porject integration with PlayGuard module.
+(This is a default repostiry in SecurityRegistry so don't forget to change it)
+
+com.github.playguard.repository.ConfigurationPrincipalRepository:
+If your project has a limited and static users then you can use this implementation.
+Just you need to define playGuard.repository in your application.conf then users can be authenticated with defined principals in application.conf
+
+Currently the playGuard.repositry has a strange format because I assume it is a string type ( not a list of objects )
+so you need to declare your repostiry as the following sample:
+
+playGuard.Repository = "[{\"username\":\"user1\",\"password\":\"pass1\"},{\"username\":\"user2\",\"password\":\"pass2\"}]"
+
+
+Currently if you want to use the last version in your project you can add following dependency to your application
+dependencies in Build.scala
+
+val appDependencies = Seq(
+    "sarabadani" %% "playguard-module" % "1.0-SNAPSHOT"
+  )
+
+Then add following resolver to your project resolvers:
+
+ play.Project(appName, appVersion, appDependencies).settings(
+        resolvers += Resolver.url("PlayGuard Repository", url("http://psycho-ir.github.com/PlayGuard/"))(Resolver.ivyStylePatterns))
+
+
+
+
+
+
+
+
