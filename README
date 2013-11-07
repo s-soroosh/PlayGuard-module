@@ -3,7 +3,7 @@ Don't play with play! without PlayGuard!
 
 PlayGuard is a simple Security Framework for Play webapplications (currently just for scala).
 
-I would like to have an active and kind community for working on this project. There are many contribution points which you can improve.
+I would like to have an active and kind community for working on this project. There are many contribution points which you can evolve.
 
 With using PlayGuard you can secure your actions with using com.github.playguard.action.SessionSecureAction instead of
 play.api.mvc.Action.
@@ -11,8 +11,8 @@ play.api.mvc.Action.
 After using SessionSecureAction if the user is not authenticated yet, she will redirect to login page (currently a very simple page)
 When she authenticated successfully then the user will redirect to the secured action.
 
-There is a  PrincipalRepository interface which you can implement your own principal repostiry and set it in SecurityRegistry object.
-Current there are two implementation
+There is a PrincipalRepository interface which you can implement your own principal repostiry and set it in SecurityRegistry object.
+Currently there are two implementation
 
 com.github.playguard.repository.DefaultPrincipalRepositry:
 A very simple Repostiry with static user and password. It is suitable just for testing your porject integration with PlayGuard module.
