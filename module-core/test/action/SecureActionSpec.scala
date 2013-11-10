@@ -44,7 +44,6 @@ object SecureActionSpec extends Specification {
   "action should return forbidden when user session is empty" in new WithApplication(fakeApplicationWithGlobal) {
     private val result: Future[SimpleResult] = TestController.sec(FakeRequest())
     status(result) must equalTo(OK)
-    println("her her")
     result onComplete {
       case Success(r) => r.toString() === Results.Ok(views.html.login(SessionAuthentication.loginForm)).toString()
 
