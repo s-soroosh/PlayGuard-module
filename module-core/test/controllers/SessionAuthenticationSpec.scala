@@ -9,7 +9,8 @@ import play.api.{Application, GlobalSettings}
 import com.github.playguard.action.SessionSecureAction
 import com.github.playguard.exception.AuthenticationException
 import play.api.cache._
-import com.github.playguard.Principal
+import com.github.playguard.{SecurityRegistry, Principal}
+import com.github.playguard.encoding.MD5Encoder
 
 
 @RunWith(classOf[JUnitRunner])
@@ -52,6 +53,13 @@ object SessionAuthenticationSpec extends Specification {
   "login should not set user session when username or password is false" in new WithApplication(fakeApplicationWithGlobal) {
     val result = com.github.playguard.controllers.SessionAuthentication.login(FakeRequest()
       .withFormUrlEncodedBody(("username", "soroosh"), ("password", "12346"))) should throwA[AuthenticationException]
+
+  }
+
+  "login should not set user session when password encoding is different from registry" in new WithApplication(fakeApplicationWithGlobal) {
+    SecurityRegistry.encoder = MD5Encoder
+    val result = com.github.playguard.controllers.SessionAuthentication.login(FakeRequest()
+      .withFormUrlEncodedBody(("username", "soroosh"), ("password", "123456"))) should throwA[AuthenticationException]
 
   }
 
