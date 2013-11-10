@@ -4,11 +4,12 @@ import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
 import play.api.cache._
-import com.github.playguard.{Principal, SecurityRegistry}
+import com.github.playguard.{SecurityRegistry}
 import com.github.playguard.action.SessionSecureAction
 import java.util.UUID
 import play.api.Play.current
 import views.html.login
+import com.github.playguard.model.Principal
 
 object SessionAuthentication extends Controller {
 

@@ -1,6 +1,5 @@
 package action
 
-import play.api.test.FakeApplication
 import play.api.{Application, GlobalSettings}
 import org.specs2.mutable._
 import play.api.test._
@@ -11,14 +10,11 @@ import play.api.mvc._
 import com.github.playguard.action.SessionSecureAction
 import java.util.UUID
 import play.api.cache._
-import com.github.playguard.repository.DefaultPrincipalRepository
-import com.github.playguard.Principal
-import javax.imageio.spi.ServiceRegistry
 import com.github.playguard.controllers.SessionAuthentication
 import scala.concurrent.{ExecutionContext, Future}
-import scala.concurrent.duration.Duration
 import scala.util.Success
 import ExecutionContext.Implicits.global
+import com.github.playguard.model.Principal
 
 
 @RunWith(classOf[JUnitRunner])
