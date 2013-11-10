@@ -1,7 +1,8 @@
 package com.github.playguard.authenticator
 
-import com.github.playguard.{SecurityRegistry, Principal}
+import com.github.playguard.{SecurityRegistry}
 import com.github.playguard.exception.AuthenticationException
+import com.github.playguard.model.Principal
 
 object SessionAuthenticator extends Authenticator {
 

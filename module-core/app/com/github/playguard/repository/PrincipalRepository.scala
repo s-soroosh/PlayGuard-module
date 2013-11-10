@@ -1,6 +1,6 @@
 package com.github.playguard.repository
 
-import com.github.playguard.Principal
+import com.github.playguard.model.Principal
 
 
 trait PrincipalRepository {

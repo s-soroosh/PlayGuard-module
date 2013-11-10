@@ -9,8 +9,9 @@ import play.api.{Application, GlobalSettings}
 import com.github.playguard.action.SessionSecureAction
 import com.github.playguard.exception.AuthenticationException
 import play.api.cache._
-import com.github.playguard.{SecurityRegistry, Principal}
+import com.github.playguard.{SecurityRegistry}
 import com.github.playguard.encoding.MD5Encoder
+import com.github.playguard.model.Principal
 
 
 @RunWith(classOf[JUnitRunner])
@@ -21,7 +22,6 @@ object SessionAuthenticationSpec extends Specification {
     FakeApplication(additionalConfiguration = Map("playGuard.Repository" -> "{\"username\":\"soroosh\",\"password\":\"123456\"}"
       , "application.secret" -> "`nx0SCrpc65bN57VZ^=vjhY3hY^vBja_tLcxytIpBuu>9PkEiJHy?E9Jgfq1Zy4/"), withGlobal = Some(new GlobalSettings() {
       override def onStart(app: Application): Unit = {
-        println("Application server started.\n");
         super.onStart(app)
       }
 
@@ -33,7 +33,6 @@ object SessionAuthenticationSpec extends Specification {
     val result = com.github.playguard.controllers.SessionAuthentication.login(FakeRequest()
       .withFormUrlEncodedBody(("username", "soroosh"), ("password", "123456")))
 
-    println(result)
     status(result) must equalTo(OK)
     contentType(result) must beSome("text/plain")
     session(result).get(SessionSecureAction.UID) must not beNone

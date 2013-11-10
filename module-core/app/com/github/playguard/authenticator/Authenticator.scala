@@ -1,6 +1,6 @@
 package com.github.playguard.authenticator
 
-import com.github.playguard.Principal
+import com.github.playguard.model.Principal
 
 
 trait Authenticator {

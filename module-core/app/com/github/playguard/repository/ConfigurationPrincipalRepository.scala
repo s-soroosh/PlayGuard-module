@@ -1,13 +1,12 @@
 package com.github.playguard.repository
 
-import com.github.playguard.Principal
 import org.slf4j.LoggerFactory
 import org.slf4j
 import play.api.libs.json._
 import play.Play
+import com.github.playguard.model.Principal
 
-case class ConfigurationPrincipal(name: String, password: String, enable: Boolean) extends Principal {
-}
+case class ConfigurationPrincipal(name: String, password: String, enable: Boolean) extends Principal
 
 object ConfigurationPrincipalRepository extends PrincipalRepository {
 
